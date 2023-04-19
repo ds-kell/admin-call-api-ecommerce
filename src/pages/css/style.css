@@ -1,0 +1,44 @@
+.col-1 {
+  flex-basis: 15%;
+
+}
+.col-2 {
+  flex-basis: 15%;
+
+}
+.col-3 {
+  flex-basis: 15%;
+
+}
+.col-4 {
+
+}
+.col-5 {
+  flex-basis: 10%;
+
+}
+.responsive-table{
+  /* padding-right: 20px; */
+  margin-right: 5%;
+}
+.col {
+  /* display: flex; */
+  /* padding: 10px 0; */
+  /* &:before { */
+    /* color: #6C7A89; */
+    /* padding-right: 10px; */
+    /* content: attr(data-label); */
+    /* flex-basis: 50%; */
+    /* text-align: right; */
+  /* } */
+}
+.addproducttitle{
+  margin-top: 15%;
+}
+.addpbtn{
+  margin-left: 29%;
+}
+
+.oTitle{
+  padding-top: 2%;
+}
