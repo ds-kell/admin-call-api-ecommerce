@@ -5,6 +5,8 @@ import {
 	NavMenu,
 	NavBtn,
 	NavBtnLink,
+	ShopName,
+
 } from './NavbarElements';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -26,12 +28,7 @@ const Navbar = () => {
 				<NavMenu>
 					<NavLink to='/' activeStyle>
 						<div>
-							<h1
-								style={{ 
-									color: "aqua",
-									
-							 	}}
-							>Anh</h1>
+							<ShopName >VaAnh</ShopName>
 						</div>
 					</NavLink>
 					<NavLink to='/order' activeStyle>
@@ -43,12 +40,13 @@ const Navbar = () => {
 					<NavLink to='/brand' activeStyle>
 						Thương hiệu
 					</NavLink>
-					{/* <NavLink to='/category' activeStyle>
-			Danh mục
-		</NavLink> */}
 					<NavLink to='/material' activeStyle>
 						Chất liệu
 					</NavLink>
+					<NavLink to='/dashboard' activeStyle>
+						DashBoard
+					</NavLink>
+
 					<NavLink to='/account' activeStyle>
 						Tài khoản
 					</NavLink>

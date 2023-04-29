@@ -55,11 +55,9 @@ class GetMaterial extends React.Component {
                     <div class="col-md-2" >Pending</div>
                     <div class="col-md-2" >Hai Phong</div>
                     <div class="col-md-1" >
-                      <Button>Xác nhận</Button>
+                      <Button>Chi tiết</Button>
                     </div>
-                    <div class="col-md-1" >
-                      <Button>Huỷ bỏ</Button>
-                    </div>
+
 
                   </TableRow>
                   <TableRow>
@@ -69,11 +67,9 @@ class GetMaterial extends React.Component {
                     <div class="col-md-2" >Pending</div>
                     <div class="col-md-2" >Ha noi</div>
                     <div class="col-md-1" >
-                      <Button>Xác nhận</Button>
+                      <Button>Chi tiết</Button>
                     </div>
-                    <div class="col-md-1" >
-                      <Button>Huỷ bỏ</Button>
-                    </div>
+
                   </TableRow>
 
                 </ul>

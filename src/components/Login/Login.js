@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Login.css';
+import styled from 'styled-components';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -33,6 +34,18 @@ export default function Login({ setToken }) {
     setToken(token);
     // navigate('/home')
   }
+  const Button = styled.button`
+    width: 20%;
+    background-color: bisque;
+    /* height: 150%;  */
+    border-radius: 10px;
+    margin-top:10px;
+    margin-left: 16%;
+    text-align: center;
+    padding: 2px 0 2px 0;
+    border-radius: 10px;
+
+`;
 
   return (
     <div>
@@ -59,7 +72,7 @@ export default function Login({ setToken }) {
               <div className='cot2'>
                 <div class='row'>
                   <div class="shop_title">
-                    <h1>Anh</h1>
+                    <h1>VaAnh</h1>
                     <h3>I don't do fashion, I am Fashion</h3>
                     <p>________________***______________</p>
                   </div>
@@ -77,7 +90,7 @@ export default function Login({ setToken }) {
                         </label>
                       </div>
                       <div className='submitBtn'>
-                        <button type="submit">Đăng nhập</button>
+                        <Button type="submit">Đăng nhập</Button>
                       </div>
                     </form>
                   </div>

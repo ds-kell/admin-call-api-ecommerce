@@ -1,14 +1,24 @@
 import React from 'react';
 
-import  {GetStore}  from '../Get/GetStoreInf';
+import { GetStore } from '../components/Store/GetStoreInf';
+
 class Store extends React.Component {
-    render() {
-      return (
+  render() {
+    return (
+      <div>
+
         <div>
-          <GetStore/>
+          {/* <Filter></Filter> */}
         </div>
-      )
-    }
+
+        <div>
+          <GetStore />
+        </div>
+
+      </div>
+
+    )
+  }
 }
 
 export default Store;

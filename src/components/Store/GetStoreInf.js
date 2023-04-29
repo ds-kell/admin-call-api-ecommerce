@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 
-import { Cot2, TableHeader, TableRow, Container, Button } from './css/style'
+import { Cot2 } from './css/style'
 
 import './css/style.css';
 
@@ -51,15 +51,15 @@ class GetStore extends React.Component {
           </div>
           <div class="col-md-8">
             <Cot2>
-              <h1>Thông tin cửa hàng</h1>
-              {/* stores.map((store) => ( */}
-              <ol>
-                Tên cửa hàng: {stores.name},
-                Số điện thoại: {stores.phoneNumber},
-                Địa chỉ: {stores.address},
-                Thời gian làm việc: {stores.workingHours}
-              </ol>
-              {/* )) */}
+              <div className='content'>
+                <h2>Thông tin cửa hàng</h2>
+                <ol>
+                  Tên cửa hàng: {stores.name},
+                  Số điện thoại: {stores.phoneNumber},
+                  Địa chỉ: {stores.address},
+                  Thời gian làm việc: {stores.workingHours}
+                </ol>
+              </div>
             </Cot2>
           </div>
           <div class="col-md-2" >

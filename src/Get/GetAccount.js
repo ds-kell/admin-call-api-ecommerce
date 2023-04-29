@@ -38,37 +38,18 @@ class GetAccount extends React.Component {
           </div>
           <div class="col-md-8">
             <Cot2>
-              <div class='row'>
-                <h3>
-                  Thông tin tài khoản
-                </h3>
-                <br></br>
-                <ol>
-                  Chủ tài khoản:
-                </ol>
-                <ol>
-                  Số điện thoại:
-                </ol>
-                <ol>
-                  Email:
-                </ol>
-              </div>
-
               <TableRow>
-
-                <h3>
+                <h4>Thông tin tài khoản</h4>
+              </TableRow>
+              <TableRow>
+                <h4>
                   Danh sách tài khoản nhân viên
-                </h3>
-                <ol>
-                  Chủ tài khoản:
-                  Số điện thoại:
-                  Email:
-                </ol>
+                </h4>
               </TableRow>
             </Cot2>
           </div>
           <div class="col-md-2" >
-            <div className='cot3'>
+            <div className='cot4'>
               {/* cột 3 */}
             </div>
           </div>

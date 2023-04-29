@@ -24,18 +24,7 @@ img{
     /* margin-top: 10%; */
     margin-left: 0%;
 }
-.submitBtn{
-    margin-right: 45%;
-    text-align: center;
-    padding: 20px 0 20px 0;
-    border-radius: 10px;
-}
-button{
-    width: 45%;
-    background-color: bisque;
-    /* height: 150%;  */
-    border-radius: 10px;
-}
+
 .shop_title{
     padding-top: 15%;
     text-align:center;

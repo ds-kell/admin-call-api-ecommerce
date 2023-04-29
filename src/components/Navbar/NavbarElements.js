@@ -3,7 +3,7 @@ import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-background: #FFFF66;
+// background: #FFFF66;
 height: 60px;
 display: flex;
 justify-content: space-between;
@@ -19,6 +19,7 @@ color: #808080;
 display: flex;
 align-items: center;
 text-decoration: none;
+font-size: 17px;
 padding: 0 1rem;
 height: 100%;
 cursor: pointer;
@@ -71,18 +72,28 @@ width: 100vw; */
 export const NavBtnLink = styled(Link)`
 border-radius: 4px;
 text-decoration: underline;
-${'' /* background: #808080; */}
 padding: 8px 20px;
 color: #000000;
 outline: none;
 border: none;
 cursor: pointer;
 transition: all 0.2s ease-in-out;
-/* Second Nav */
-margin-left: 24px;
 &:hover {
 	transition: all 0.2s ease-in-out;
 	background: #fff;
 	color: #808080;
 }
 `;
+export const ShopName = styled.h1`
+	color: black;
+	padding-top: 10%;
+	text-align:center;
+	padding-right: 40%;
+	font-family: ans-serif;
+    font-size: 50px;
+    text-shadow: 3px 3px 3px #ababab;
+	&:hover {
+		transition: all 0.2s ease-in-out;
+		background: #fff;
+		// color: blue;
+`

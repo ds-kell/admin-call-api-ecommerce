@@ -51,6 +51,8 @@ const Button = styled.button`
   font-size: 15px;
   border-radius: 10px;
   width: 90px;
+  margin-top: 5%;
+  height: 30px;
 
 `;
 export { Button };
@@ -59,6 +61,10 @@ const CButton = styled.button`
   background-color: white;
   font-size: 15px;
   border-radius: 10px;
-  width: 90px;
+  width: 150px;
+  position: fixed;
+  bottom: 10;
+  right: 0;
+
 `;
 export { CButton };

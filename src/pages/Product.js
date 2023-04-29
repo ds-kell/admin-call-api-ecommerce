@@ -1,29 +1,26 @@
 import React from 'react';
-import { Cot2, TableHeader, TableRow, Container, Button } from './css/style'
 
 import './css/style.css';
-import { GetProduct } from '../Get/GetProduct';
-// import { GetProduct } from '../Get/GetProduct';
-// import { GetProduct } from '../Get/GetProduct';
 
-
+import { GetProduct } from '../components/Product/GetProduct';
 
 import { AddProduct } from '../Post/AddProduct';
+import { FilterCategory } from '../Get/ProductFillter';
 
 class Products extends React.Component {
   render() {
     return (
       <div>
         <div class="row">
-          <div class="col-md-0">
+          <div class="col-md-2">
             <div className='cot1'>
-              {/* {products.length} */}
+              <FilterCategory></FilterCategory>
             </div>
           </div>
           <div class="col-md-8">
-            <GetProduct />
+              <GetProduct/>
           </div>
-          <div class="col-md-4" >
+          <div class="col-md-2" >
             <div className='cot3'>
               <div className='addproducttitle'>
                 <AddProduct></AddProduct>
