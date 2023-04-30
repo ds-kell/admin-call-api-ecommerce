@@ -40,8 +40,6 @@ class GetOrder extends React.Component {
         <div class="row">
           <Cot2>
               <div class='row'>
-                <div className='addProduct'>
-                </div>
               </div>
               <div className='listProducts'>
                 <Container>

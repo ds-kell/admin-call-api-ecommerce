@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import './css/style.css';
 
 
-
 const accessToken = sessionStorage.getItem('utoken');
 let config = {};
 if (accessToken) {
@@ -14,20 +13,20 @@ if (accessToken) {
     };
 }
 
-function GetColor(props) {
-    const [color, setColor] = useState([]);
-    const [colorSelectedId, setColorSelectedId] = useState(1);
+function GetCategory(props) {
+    const [categories, setCategories] = useState([]);
+    const [categorySelectedId, setCategorySelectedId] = useState(1);
     
-    const handleColorChange = (event) => {
-        const colorId = event.target.value;
-        setColorSelectedId(colorId);
-        props.onColorChange(colorId);
+    const handleCategoryChange = (event) => {
+        const categoryId = event.target.value;
+        setCategorySelectedId(categoryId);
+        props.onCategoryChange(categoryId);
       };
 
     useEffect(() => {
-        axios.get('http://localhost:8081/api/admin/color', config)
+        axios.get('http://localhost:8081/api/categories', config)
             .then(response => {
-                setColor(response.data.data);
+                setCategories(response.data.data);
             })
             .catch(error => {
                 console.log(error);
@@ -35,8 +34,8 @@ function GetColor(props) {
     }, []);
     return (
         <div >
-            <select value={colorSelectedId} onChange={handleColorChange}>
-                {color.map(c => (
+            <select value={categorySelectedId} onChange={handleCategoryChange}>
+                {categories.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
             </select>
@@ -44,4 +43,4 @@ function GetColor(props) {
     );
 }
 
-export { GetColor };
+export { GetCategory };

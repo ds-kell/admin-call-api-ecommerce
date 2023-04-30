@@ -16,6 +16,7 @@ import Login from './components/Login/Login';
 import useToken from './components/Login/useToken';
 
 import Navbar from './components/Navbar/Navbar';
+import { AddProductDetail } from './components/Product/AddProductDetail';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
 					{/* <useNavigate from="/" to="/login" /> */}
 					<Route path="order" element={<Order />} />
 					<Route path="product" element={<Product />} />
+					<Route path="product/add-product/:id" element={<AddProductDetail />} />
 					<Route path="brand" element={<Brand />} />
 					<Route path="material" element={<Material />} />
 					<Route path="category" element={<Category />} />

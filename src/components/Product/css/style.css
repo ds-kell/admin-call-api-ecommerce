@@ -1,97 +1,25 @@
-.col-1 {
-  flex-basis: 15%;
 
-}
-
-.col-2 {
-  flex-basis: 15%;
-
-}
-
-.col-3 {
-  flex-basis: 15%;
-
-}
-
-.col-4 {}
-
-.col-5 {
-  flex-basis: 10%;
-
-}
-
-.responsive-table {
-  /* padding-right: 20px; */
-  margin-right: 5%;
-}
-
-.col {
-  /* display: flex; */
-  /* padding: 10px 0; */
-  /* &:before { */
-  /* color: #6C7A89; */
-  /* padding-right: 10px; */
-  /* content: attr(data-label); */
-  /* flex-basis: 50%; */
-  /* text-align: right; */
-  /* } */
-}
-
-.addproducttitle {
-  margin-top: 15%;
-}
-
-.addpbtn {
-  margin-left: 29%;
-}
-
-.cot1 {
-  /* background-color: red; */
-}
-
-.cot2 {
-  background-color: wheat;
-  padding-bottom: 15%;
-  border-radius: 5%;
-}
-
-.cot3 {
-  /* background-color: yellow; */
-}
-
-select {
+/* chung */
+input{
   border-radius: 10px;
-  width: 200px;
-  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  width: 230%;
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
   border-style: solid;
   border-width: 1px;
   border-color: black;
+}/* file add */
+.tTitle{
+  margin-top: 16px;
+  margin-bottom: 17px;
+}
+.addProductBtn{
+  margin-left: 35%;
 }
 
-.categoryName,
-.supplierName {
-  display: block;
-  margin: 10px 0 10px 0;
-  color: black;
-  text-decoration-line: none;
+.productName, .category, .material, .imageLink, .imagePath, .description, .supplier {
+  margin-top: 17px;
 }
-
-.fcategory,
-.fsupplier {
-  margin-top: 55px;
-  margin-left: 35px;
-}
-
-.close-button {
-  /* background-color: white;
-  font-size: 15px;
-  border-radius: 10px;
-  width: 90px;
-  position: fixed;
-  bottom: 0;
-  right: 0; */
-}
-
+/* file show */
 .page-number {
   display: flex;
   justify-content: center;
@@ -114,12 +42,32 @@ select {
   background-color: #ddd;
 }
 
-img {
-  width: 200px;
-  height: 121px;
-}
+/* file detail */
 
-.productImage {
-  width: 50%;
-  height: 50%;
+/* .productImage {
+  width: 90%;
+  height: 90%;
+} */
+.addProductTitle{
+  padding-top: 2%;
+  margin-left: 5%;
+}
+.addProductDetailBtn{
+  margin-left: 55%;
+}
+.pName, .supplier, .discountDate, .productId, .pSize, .price, .discount{
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.addTitel h4{
+  margin-left: 2%;
+}
+.productId input{
+  text-align: center;
+}
+.count{
+  margin-top: 30px;
+}
+.color{
+  margin-top: 20px;
 }

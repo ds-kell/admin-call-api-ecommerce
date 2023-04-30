@@ -3,10 +3,21 @@ import React from 'react';
 import './css/style.css';
 
 import { GetProduct } from '../components/Product/GetProduct';
-
-import { AddProduct } from '../Post/AddProduct';
 import { FilterCategory } from '../Get/ProductFillter';
-
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { AddProduct } from '../components/Product/AddProduct';
+const Button = styled.button`
+  background-color: white;
+  ${'' /* color: white; */}
+  font-size: 15px;
+  border-radius: 10px;
+  width: 90px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 25%;
+`;
+export { Button };
 class Products extends React.Component {
   render() {
     return (
@@ -17,13 +28,15 @@ class Products extends React.Component {
               <FilterCategory></FilterCategory>
             </div>
           </div>
-          <div class="col-md-8">
-              <GetProduct/>
+          <div class="col-md-7">
+            <GetProduct />
           </div>
-          <div class="col-md-2" >
+          <div class="col-md-3" >
             <div className='cot3'>
               <div className='addproducttitle'>
-                <AddProduct></AddProduct>
+                <div class='row'>
+                  <AddProduct></AddProduct>
+                </div>
               </div>
             </div>
           </div>

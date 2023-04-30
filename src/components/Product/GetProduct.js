@@ -9,8 +9,6 @@ let config = {
 
 };
 if (accessToken) {
-
-
   config = {
     method: 'POST',
     headers: { Authorization: 'Bearer ' + accessToken.slice(1, -1) }
@@ -25,8 +23,8 @@ function GetProduct() {
     axios.post('http://localhost:8081/api/admin/products', config)
       .then(response => {
         setProducts(response.data.data);
-        console.log("response");
-        console.log(response);
+        // console.log("response");
+        // console.log(response);
       })
       .catch(error => {
         console.log(error);

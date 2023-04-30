@@ -14,20 +14,20 @@ if (accessToken) {
     };
 }
 
-function GetColor(props) {
-    const [color, setColor] = useState([]);
-    const [colorSelectedId, setColorSelectedId] = useState(1);
+function GetMaterial(props) {
+    const [material, setMaterial] = useState([]);
+    const [materialSelectedId, setMaterialSelectedId] = useState(1);
     
-    const handleColorChange = (event) => {
-        const colorId = event.target.value;
-        setColorSelectedId(colorId);
-        props.onColorChange(colorId);
+    const handleMaterialChange = (event) => {
+        const materialId = event.target.value;
+        setMaterialSelectedId(materialId);
+        props.onMaterialChange(materialId);
       };
 
     useEffect(() => {
-        axios.get('http://localhost:8081/api/admin/color', config)
+        axios.get('http://localhost:8081/api/admin/material', config)
             .then(response => {
-                setColor(response.data.data);
+                setMaterial(response.data.data);
             })
             .catch(error => {
                 console.log(error);
@@ -35,8 +35,8 @@ function GetColor(props) {
     }, []);
     return (
         <div >
-            <select value={colorSelectedId} onChange={handleColorChange}>
-                {color.map(c => (
+            <select value={materialSelectedId} onChange={handleMaterialChange}>
+                {material.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
             </select>
@@ -44,4 +44,4 @@ function GetColor(props) {
     );
 }
 
-export { GetColor };
+export { GetMaterial };

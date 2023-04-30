@@ -50,9 +50,7 @@ const Button = styled.button`
   background-color: white;
   font-size: 15px;
   border-radius: 10px;
-  width: 100px;
-  margin-top: 3%;
-  height: 30px;
+  width: 90px;
 
 `;
 export { Button };
@@ -61,24 +59,6 @@ const CButton = styled.button`
   background-color: white;
   font-size: 15px;
   border-radius: 10px;
-  width: 150px;
-  position: fixed;
-  bottom: 10;
-  right: 0;
-
+  width: 90px;
 `;
 export { CButton };
-
-const RButton = styled.button`
-  margin-top: 2%;
-  margin-left: 23%;
-  background-color: white;
-  font-size: 15px;
-  border-radius: 10px;
-  width: 150px;
-  // position: fixed;
-  // bottom: 10;
-  // right: 0;
-
-`;
-export { RButton };

@@ -1,9 +1,11 @@
 import React from 'react';
-import './css/style.css';
-import { Cot2, TableHeader, TableRow, Container, Button, CButton } from './css/style'
+import { Cot2, TableHeader, TableRow, Container, Button, CButton, RButton } from './css/style'
 import './css/style.css';
 import { useState, useEffect } from 'react'
 import ReactModal from 'react-modal';
+import { Link } from 'react-router-dom';
+import { GetProductDetails } from './GetProductDetail';
+import { AddProductDetail } from './AddProductDetail';
 function ShowProduct(props) {
   const { products } = props;
   const [selectedItem, setSelectedItem] = useState(null);
@@ -61,6 +63,9 @@ function ShowProduct(props) {
                     {/* Display current products */}
                     {currentProducts.map((product) => (
                       <div key={product.id} >
+                          <div class="col-sm-1">
+                            <center>{product.id}</center>
+                          </div>
                         <TableRow>
                           <div class="col-md-2" >
                             <p>{showMore ? product.name : `${(product.name).slice(0, 30)}...`}</p>
@@ -71,38 +76,46 @@ function ShowProduct(props) {
                               <a style={{ color: '', textDecoration: 'underline' }} onClick={toggleShowMore}>Ẩn bớt</a>
                             )}
                           </div>
-                          <div class="col-sm-1"></div>
                           <div class="col-md-2" >{product.supplier == null ? 'none' : product.supplier.name}</div>
-                          <div class="col-md-1"></div>
-                          <div class="col-md-1" >{product.material == null ? 'none' : product.material.name}</div>
+                          {/* <div class="col-md-1"></div> */}
+                          <div class="col-md-2" >{product.material == null ? 'none' : product.material.name}</div>
                           <div class="col-sm-1"></div>
-                          <div class="col-md-1" >{product.price}</div>
-                          <div class="col-sm-1"></div>
-                          <Button onClick={() => { handleItemClick(product) }}>Chi tiết</Button>
+                          <div class="col-md-2" >{product.category == null ? 'none' : product.category.name}</div>
+                          <Button onClick={() => { handleItemClick(product); console.log(product)}}>Chi tiết</Button>
                         </TableRow>
                       </div>
                     ))}
                     <ReactModal isOpen={!!selectedItem} >
-                      <h3> {selectedItem?.name}</h3>
-                      <h4>{selectedItem?.price}</h4>
-
-                      {selectedItem?.images
-                        ? (
-                          <ul>
-                            {(selectedItem.images).map(image=> (
-                              <li key={image.id}>
-                                <div className='productImage'>
-                                <img src={image.imageUrl}/>
-                                </div>
-                              </li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <p>Danh sách trống</p>
-                        )
-                      }
-                      <h5>{selectedItem?.supplier == null ? 'none' : selectedItem?.supplier.name}</h5>
-
+                      <div>
+                        <center>
+                        <h4>{selectedItem?.name}</h4>
+                        </center>
+                      </div>
+                      <div class='row'>
+                        <div class='col-md-3'>
+                          <GetProductDetails productId={selectedItem?.id}></GetProductDetails>
+                        </div>
+                        <div class='col-md-5 col-sm-2'>
+                          {selectedItem?.images
+                            ? (
+                              <ul>
+                                {(selectedItem.images).map(image => (
+                                  <div key={image.id}>
+                                    <div className='productImage'>
+                                      <img src={image.imageUrl} />
+                                    </div>
+                                  </div>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p>Danh sách trống</p>
+                            )
+                          }
+                        </div>
+                        <div class='col-md-4'>
+                          <AddProductDetail productId={selectedItem?.id}></AddProductDetail>
+                        </div>
+                      </div>
                       <CButton className="close-button" onClick={handleCloseModal} >
                         Đóng
                       </CButton>
