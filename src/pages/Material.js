@@ -1,11 +1,11 @@
 import React from 'react';
 
-import  { GetMaterial}  from '../Get/GetMaterial';
+// import  { GetMaterial}  from '../Get/GetMaterial';
 class Material extends React.Component {
     render() {
       return (
         <div>
-          <GetMaterial/>
+          {/* <GetMaterial/> */}
         </div>
       )
     }

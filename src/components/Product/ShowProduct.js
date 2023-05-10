@@ -34,6 +34,14 @@ function ShowProduct(props) {
 
   const [showMore, setShowMore] = useState(false);
   const [showLess, setShowLess] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   const toggleShowMore = () => {
     setShowMore(!showMore);
@@ -63,9 +71,9 @@ function ShowProduct(props) {
                     {/* Display current products */}
                     {currentProducts.map((product) => (
                       <div key={product.id} >
-                          <div class="col-sm-1">
-                            <center>{product.id}</center>
-                          </div>
+                        <div class="col-sm-1">
+                          <center>{product.id}</center>
+                        </div>
                         <TableRow>
                           <div class="col-md-2" >
                             <p>{showMore ? product.name : `${(product.name).slice(0, 30)}...`}</p>
@@ -81,14 +89,14 @@ function ShowProduct(props) {
                           <div class="col-md-2" >{product.material == null ? 'none' : product.material.name}</div>
                           <div class="col-sm-1"></div>
                           <div class="col-md-2" >{product.category == null ? 'none' : product.category.name}</div>
-                          <Button onClick={() => { handleItemClick(product); console.log(product)}}>Chi tiết</Button>
+                          <Button onClick={() => { handleItemClick(product); openModal(); console.log(product) }}>Chi tiết</Button>
                         </TableRow>
                       </div>
                     ))}
-                    <ReactModal isOpen={!!selectedItem} >
+                    <ReactModal isOpen={modalIsOpen} onRequestClose={closeModal} >
                       <div>
                         <center>
-                        <h4>{selectedItem?.name}</h4>
+                          <h4>{selectedItem?.name}</h4>
                         </center>
                       </div>
                       <div class='row'>
@@ -116,7 +124,7 @@ function ShowProduct(props) {
                           <AddProductDetail productId={selectedItem?.id}></AddProductDetail>
                         </div>
                       </div>
-                      <CButton className="close-button" onClick={handleCloseModal} >
+                      <CButton className="close-button" onClick={closeModal} >
                         Đóng
                       </CButton>
                     </ReactModal>

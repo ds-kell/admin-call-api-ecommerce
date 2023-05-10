@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { GetOrder } from '../Get/GetOrder';
+// import { GetOrder } from '../Get/GetOrder';
 import { GetBillOrder } from '../components/BillOrder/GetBillOrder';
 class Order extends React.Component {
   render() {
@@ -27,7 +27,7 @@ class Order extends React.Component {
                 <div className='oTitle'>
                   <h3> Đơn hàng của khách</h3>
                 </div>
-                <GetOrder />
+                {/* <GetOrder /> */}
               </div>
               
             </div>

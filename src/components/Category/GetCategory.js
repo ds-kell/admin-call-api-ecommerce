@@ -24,7 +24,7 @@ function GetCategory(props) {
       };
 
     useEffect(() => {
-        axios.get('http://localhost:8081/api/categories', config)
+        axios.get('http://localhost:8081/api/admin/category', config)
             .then(response => {
                 setCategories(response.data.data);
             })

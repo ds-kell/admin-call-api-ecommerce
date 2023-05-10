@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 
-import { Cot2, TableHeader, TableRow, Container, Button, CButton, RButton } from './css/style'
+import { Cot2, TableHeader, TableRow, Container, Button} from './css/style'
 import './css/style.css';
 const accessToken = sessionStorage.getItem('utoken');
 let config = {
@@ -19,9 +19,8 @@ class GetBillOrder extends React.Component {
     status: false
   };
 
-
   componentDidMount() {
-    axios.get('http://localhost:8081/api/admin/get-bill-order')
+    axios.get('http://localhost:8081/api/admin/get-bill-order', config)
       .then(response => this.setState(
         {
           billOrders: response.data.data,

@@ -16,7 +16,7 @@ input{
   margin-left: 35%;
 }
 
-.productName, .category, .material, .imageLink, .imagePath, .description, .supplier {
+.productName, .category, .material, .imageLink, .imagePath, .description, .supplier, .discountValue {
   margin-top: 17px;
 }
 /* file show */

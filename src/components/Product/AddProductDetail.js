@@ -3,6 +3,8 @@ import axios from 'axios';
 import './css/style.css';
 import { Button } from './css/style'
 import { GetColor } from '../Color/GetColor';
+import { GetType} from '../Type/GetType';
+
 
 
 const accessToken = sessionStorage.getItem('utoken');
@@ -25,7 +27,8 @@ class AddProductDetail extends React.Component {
       discountId: '',
       colorId: '',
       sizeId: '',
-      selectedDate: ''
+      discountValue: '',
+      endDate: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,14 +41,18 @@ class AddProductDetail extends React.Component {
     this.setState({ [name]: value });
   }
 
-
   handleDateChange(event) {
-    this.setState({ selectedDate: event.target.value });
+    this.setState({ endDate: event.target.value });
   }
 
   handleColorChange = (colorId) => {
     this.setState({
       colorId: colorId
+    });
+  };
+  handleTypeChange = (sizeId) => {
+    this.setState({
+      sizeId: sizeId
     });
   };
 
@@ -55,13 +62,14 @@ class AddProductDetail extends React.Component {
       price: this.state.price,
       count: this.state.count,
       productId: this.props.productId,
-      discountId: 1,
+      discountValue: this.state.discountValue,
       colorId: this.state.colorId,
-      sizeId: this.state.sizeId
+      sizeId: this.state.sizeId,
+      endDate: this.state.endDate,
+      discountId: 32,
     };
-    console.log(typeof (newProductDetail));
     console.log(newProductDetail);
-
+    console.log(typeof(endDate))
     axios.post('http://localhost:8081/api/admin/product/add-detail', newProductDetail, config)
       .then(response => {
         console.log(response)
@@ -72,7 +80,6 @@ class AddProductDetail extends React.Component {
       .catch(error => {
         console.log(error)
       });
-
   }
 
   render() {
@@ -94,19 +101,19 @@ class AddProductDetail extends React.Component {
                     Số lượng:
                   </div>
                   <div className='tTitle'>
-                    Màu sắc
+                    Màu sắc:
                   </div>
                   <div className='tTitle'>
-                    Kích thước
+                    Kiểu dáng:
                   </div>
                   <div className='tTitle'>
-                    Giá tiền
+                    Giá tiền:
                   </div>
                   <div className='tTitle'>
-                    Giảm giá
+                    Giảm giá:
                   </div>
                   <div className='tTitle'>
-                    Ngày kết thúc
+                    Ngày kết thúc:
                   </div>
                 </div>
                 <div class='col-md-6'>
@@ -122,21 +129,23 @@ class AddProductDetail extends React.Component {
                   </div>
 
                   <div className='pSize'>
-                    <input type="text" name="sizeId" value={this.state.sizeId} onChange={this.handleChange} />
+                  <GetType onColorChange={this.handleTypeChange} />
+
                   </div>
 
                   <div className='price'>
                     <input type="text" name="price" value={this.state.price} onChange={this.handleChange} />
                   </div>
 
-                  <div className='discount'>
-                    <input type="text" name="discountId" value={this.state.discountId} onChange={this.handleChange} />
+                  <div className='discountValue'>
+                    <input input type="text" name="discountValue" value={this.state.discountValue} onChange={this.handleChange} />
                   </div>
+
                   <div className='discountDate'>
                     <input
                       type="date"
                       name="dateInput"
-                      value={this.state.selectedDate}
+                      value={this.state.endDate}
                       onChange={this.handleDateChange}
                     />
                   </div>

@@ -121,7 +121,7 @@ class AddProduct extends React.Component {
                                     <input type="text" name="productId" value={this.props.productId} onChange={this.handleChange} />
                                 </div>
                                 <div className='category'>
-                                <GetCategory onColorChange={this.handleCategoryChange} />
+                                    <GetCategory onColorChange={this.handleCategoryChange} />
                                 </div>
                                 <div className='supplier'>
                                     <GetSupplier onColorChange={this.handleSupplierChange} />
@@ -129,7 +129,6 @@ class AddProduct extends React.Component {
 
                                 <div className='material'>
                                     <GetMaterial onColorChange={this.handleMaterialChange} />
-
                                 </div>
 
                                 <div className='description'>
